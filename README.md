@@ -1,2 +1,3 @@
-# java_data_structures_code
-以前使用Java编写的数据结构代码分享
+# Java数据结构大全
+
+学习《数据结构与算法》期间使用Java语言编写的数据结构代码分享，仅供参考。
