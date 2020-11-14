@@ -258,4 +258,5 @@ class LinkedListTest {
             System.out.println(list);
         }
     }
+
 }

@@ -1,4 +1,4 @@
-package org.structures.tree;
+package org.structures.tree.binary;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

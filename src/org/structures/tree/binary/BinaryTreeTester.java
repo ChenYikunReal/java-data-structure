@@ -1,4 +1,4 @@
-package org.structures.tree;
+package org.structures.tree.binary;
 
 public class BinaryTreeTester {
     

@@ -23,6 +23,7 @@ package org.structures.advanced.treap;
 public class Treap<T extends Comparable<? super T>> {
 
     private TreapNode<T> root;
+
     private TreapNode<T> nullNode;
 
     /**

@@ -1,4 +1,4 @@
-package org.structures.tree;
+package org.structures.tree.binary;
 
 public interface IBinaryTree<T> {
     
@@ -49,7 +49,7 @@ public interface IBinaryTree<T> {
     
     /**
      * 插入x作为p的左右孩子
-     * @param p
+     * @param parent
      * @param x
      * @param leftChild
      * @return

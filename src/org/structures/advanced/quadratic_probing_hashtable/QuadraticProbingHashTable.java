@@ -9,7 +9,6 @@ package org.structures.advanced.quadratic_probing_hashtable;
 // bool contains( x )     --> Return true if x is present
 // void makeEmpty( )      --> Remove all items
 
-
 /**
  * Probing table implementation of hash tables.
  * Note that all "matching" is based on the equals method.
@@ -19,7 +18,9 @@ public class QuadraticProbingHashTable<T> {
     private static final int DEFAULT_TABLE_SIZE = 101;
 
     private HashEntry<T> [] array; // The array of elements
+
     private int occupied;                 // The number of occupied cells
+
     private int theSize;                  // Current size
 
     /**

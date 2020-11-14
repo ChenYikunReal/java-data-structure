@@ -1,6 +1,6 @@
-package org.structures.tree;
+package org.structures.tree.binary;
 
-public class TriNode<T> {
+public class BinaryTreeNode<T> {
     
     private T data;
     
@@ -8,11 +8,16 @@ public class TriNode<T> {
     
     private BinaryTreeNode<T> right;
     
-    private BinaryTreeNode<T> parent;
-
-    public TriNode(T data) {
+    public BinaryTreeNode(T data) {
         super();
         this.data = data;
+    }
+
+    public BinaryTreeNode(T data, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
+        super();
+        this.data = data;
+        this.left = left;
+        this.right = right;
     }
 
     public T getData() {
@@ -39,12 +44,17 @@ public class TriNode<T> {
         this.right = right;
     }
 
-    public BinaryTreeNode<T> getParent() {
-        return parent;
+    @Override
+    public String toString() {
+        return "BinaryTreeNode [data=" + data + "]";
     }
-
-    public void setParent(BinaryTreeNode<T> parent) {
-        this.parent = parent;
+    
+    /**
+     * 是否是叶子结点
+     * @return
+     */
+    public boolean isLeaf() {
+        return this.left == null && this.right == null;
     }
-
+    
 }

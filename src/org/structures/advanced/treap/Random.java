@@ -125,5 +125,6 @@ public class Random {
             System.out.println(r.randomInt());
         }
     }
+
 }
 

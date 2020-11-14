@@ -23,15 +23,20 @@ import org.structures.advanced.treap.UnderflowException;
 public class RedBlackTree<T extends Comparable<? super T>> {
 
     private RedBlackNode<T> header;
+
     private RedBlackNode<T> nullNode;
 
     private static final int BLACK = 1;    // BLACK must be 1
+
     private static final int RED   = 0;
 
     // Used in insert routine and its helpers
     private RedBlackNode<T> current;
+
     private RedBlackNode<T> parent;
+
     private RedBlackNode<T> grand;
+
     private RedBlackNode<T> great;
 
     /**

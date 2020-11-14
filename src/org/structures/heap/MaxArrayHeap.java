@@ -19,7 +19,7 @@ public class MaxArrayHeap {
      */
     public void addElement(int element) {
         if (count == tree.length-1) {
-            throw new TreeException("堆满，无法添加新结点");
+            throw new HeapException("堆满，无法添加新结点");
         }
         //新增结点设置为最优叶子
         tree[++count] = element;
@@ -41,7 +41,7 @@ public class MaxArrayHeap {
     
     public int removeMax() {
         if (count == 0) {
-            throw new TreeException("堆空，无法移除根结点");
+            throw new HeapException("堆空，无法移除根结点");
         }
       //暂存最大元素
         int maxNode = tree[1];

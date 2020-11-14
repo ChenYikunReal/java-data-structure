@@ -29,8 +29,11 @@ public class CircularLinkedList<T> implements ListInterface<T> {
 
     @Override
     public void printList() {
-        // TODO Auto-generated method stub
-        
+        CircularLinkedNode<T> temp = first;
+        while (!temp.getNext().equals(first)) {
+            temp = temp.getNext();
+            System.out.println(temp.getData());
+        }
     }
 
     @Override

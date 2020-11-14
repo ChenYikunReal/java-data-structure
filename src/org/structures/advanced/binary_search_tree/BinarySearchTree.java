@@ -19,7 +19,6 @@ import org.structures.advanced.treap.UnderflowException;
 /**
  * Implements an unbalanced binary search tree.
  * Note that all "matching" is based on the compareTo method.
- * @author Mark Allen Weiss
  */
 public class BinarySearchTree<T extends Comparable<? super T>> {
 

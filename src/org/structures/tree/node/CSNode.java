@@ -1,4 +1,4 @@
-package org.structures.tree;
+package org.structures.tree.node;
 
 public class CSNode<T> {
     
