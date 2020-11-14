@@ -1,4 +1,4 @@
-package org.structures.list.sequential2;
+package org.structures.list.sequentiallist;
 
 import org.structures.Person;
 

@@ -25,7 +25,7 @@ public class EdgeArray<T> {
     public void kruskal() {
         int vertex1_root, vertex2_root;
         //定义parent数组
-        int parent[] = new int[vertices_num];
+        int[] parent = new int[vertices_num];
         //初始化parent数组
         for (int i = 0; i < vertices_num; i++) {
             parent[i] = -1;

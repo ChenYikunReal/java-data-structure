@@ -5,7 +5,7 @@ import org.structures.queue.QueueInterface;
 
 public class CircularQueue<T> implements QueueInterface<T> {
     
-    private T[] queue;
+    private final T[] queue;
     
     private final static int QUEUE_SIZE = 100;
     
@@ -40,8 +40,7 @@ public class CircularQueue<T> implements QueueInterface<T> {
             throw new QueueException("队列空");
         }
         front = (front+1)%QUEUE_SIZE;
-        T queueHead = queue[front];
-        return queueHead;
+        return queue[front];
     }
 
     @Override
@@ -49,8 +48,7 @@ public class CircularQueue<T> implements QueueInterface<T> {
         if (isEmpty()) {
             throw new QueueException("队列空");
         }
-        T element = queue[front+1];
-        return element;
+        return queue[front+1];
     }
 
     @Override

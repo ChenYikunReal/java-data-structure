@@ -5,7 +5,7 @@ import org.structures.queue.QueueInterface;
 
 public class SequentialQueue<T> implements QueueInterface<T> {
     
-    private T[] queue;
+    private final T[] queue;
     
     private final static int QUEUE_SIZE = 100;
     

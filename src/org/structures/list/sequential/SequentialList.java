@@ -76,8 +76,7 @@ public class SequentialList<T> implements ListInterface<T> {
         if (i < 1 || i > length) {
             throw new ListException("查找位置非法");
         }
-        T element = list[i-1];
-        return element;
+        return list[i-1];
     }
 
     @Override
@@ -114,10 +113,7 @@ public class SequentialList<T> implements ListInterface<T> {
 
     @Override
     public boolean isEmpty() {
-        if (length == 0) {
-            return true;
-        }
-        return false;
+        return length == 0;
     }
     
     @SuppressWarnings("unchecked")

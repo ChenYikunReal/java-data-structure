@@ -25,8 +25,8 @@ public class LinkedList<T> implements ListInterface<T> {
     public LinkedList(T[] init) {
         first = new LinkedNode<T>();
         LinkedNode<T> rear = first;
-        for (int i = 0; i < init.length; i++) {
-            LinkedNode<T> node = new LinkedNode<>(init[i]);
+        for (T t : init) {
+            LinkedNode<T> node = new LinkedNode<>(t);
             rear.setNext(node);
             rear = node;
         }
@@ -125,10 +125,7 @@ public class LinkedList<T> implements ListInterface<T> {
 
     @Override
     public boolean isEmpty() {
-        if (first.getNext() == null) {
-            return true;
-        }
-        return false;
+        return first.getNext() == null;
     }
 
 }

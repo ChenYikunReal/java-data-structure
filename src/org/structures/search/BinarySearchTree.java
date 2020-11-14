@@ -9,8 +9,8 @@ public class BinarySearchTree {
     
     
     public BinarySearchTree(int[] record, int n) {
-        for (int i = 0; i < record.length; i++) {
-            insertBST(root, record[i]);
+        for (int j : record) {
+            insertBST(root, j);
         }
     }
     
@@ -20,7 +20,7 @@ public class BinarySearchTree {
             return null;
         } else if ((Integer)root.getData() == key.intValue()) {     //key等于根节点，查找成功
             return root;
-        } else if ((Integer)root.getData() > key.intValue()) {      //key小于根结点，将在左子树查找
+        } else if ((Integer)root.getData() > key) {      //key小于根结点，将在左子树查找
             return searchBST(root.getLeft(), key);
         } else {                                                    //key大于很结点，将在右子树查找
             return searchBST(root.getRight(), key);
@@ -31,7 +31,7 @@ public class BinarySearchTree {
         if (newRoot == null) {
             this.root = new BinaryTreeNode<Integer>(element);
         } else {
-            if (newRoot.getData().intValue() > element.intValue()) {
+            if (newRoot.getData() > element) {
                 if (newRoot.getLeft() == null) {
                     newRoot.setLeft(new BinaryTreeNode<Integer>(element));
                 } else {

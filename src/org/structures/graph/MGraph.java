@@ -172,8 +172,8 @@ public class MGraph<T> implements GraphInterface<T> {
             //放入最小生成树的数组
             parents[toIndex] = fromIndex;
         }
-        for (int i = 0; i < parents.length; i++) {
-            System.out.print(parents[i] + " ");
+        for (int parent : parents) {
+            System.out.print(parent + " ");
         }
         System.out.println();
     }

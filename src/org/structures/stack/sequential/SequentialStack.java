@@ -8,7 +8,7 @@ public class SequentialStack<T> implements StackInterface<T> {
     /**
      * 顺序栈储存
      */
-    private T[] stack;
+    private final T[] stack;
     
     /**
      * 顺序栈容量
@@ -45,8 +45,7 @@ public class SequentialStack<T> implements StackInterface<T> {
         if (isEmpty()) {
             throw new StackException("栈空");
         }
-        T result = stack[top--];
-        return result;
+        return stack[top--];
     }
 
     @Override
@@ -59,10 +58,7 @@ public class SequentialStack<T> implements StackInterface<T> {
 
     @Override
     public boolean isEmpty() {
-       if (top == -1) {
-           return true;
-       }
-        return false;
+        return top == -1;
     }
 
 }

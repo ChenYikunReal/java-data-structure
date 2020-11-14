@@ -1,8 +1,10 @@
 package org.structures.graph;
 
 public class EulerCircuit {
+
     //定义二维数组实现图储存
     int[][] mat;
+
     //定义顶点个数
     int vertexNum;
 

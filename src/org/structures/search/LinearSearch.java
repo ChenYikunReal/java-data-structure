@@ -5,12 +5,12 @@ public class LinearSearch {
     /**
      * 定义查找记录集合
      */
-    private int[] record;
+    private final int[] record;
     
     /**
      * 查找集合元素个数
      */
-    private int length;
+    private final int length;
 
     public LinearSearch(int[] record, int length) {
         super();

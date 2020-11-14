@@ -12,15 +12,15 @@ public class CircularLinkedList<T> implements ListInterface<T> {
     private CircularLinkedNode<T> first;
     
     public CircularLinkedList() {
-        first = new CircularLinkedNode<T>();
+        first = new CircularLinkedNode<>();
         first.setNext(first);
     }
     
     public CircularLinkedList(T[] init) {
-        first = new CircularLinkedNode<T>();
+        first = new CircularLinkedNode<>();
         CircularLinkedNode<T> rear = first;
-        for (int i = 0; i < init.length; i++) {
-            CircularLinkedNode<T> node = new CircularLinkedNode<>(init[i]);
+        for (T t : init) {
+            CircularLinkedNode<T> node = new CircularLinkedNode<>(t);
             node.setNext(first);
             rear.setNext(node);
             rear = node;

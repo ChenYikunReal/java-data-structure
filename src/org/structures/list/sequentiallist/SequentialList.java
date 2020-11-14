@@ -1,4 +1,4 @@
-package org.structures.list.sequential2;
+package org.structures.list.sequentiallist;
 
 
 import java.io.Serializable;
@@ -180,13 +180,11 @@ public class SequentialList<T> implements ISequentialList<T>, Serializable {
 
 //    @Override
 //    public boolean removeAll(ISequentialList<T> c) {
-//        // TODO Auto-generated method stub
 //        return false;
 //    }
 //
 //    @Override
 //    public boolean retainAll(ISequentialList<T> c) {
-//        // TODO Auto-generated method stub
 //        return false;
 //    }
 

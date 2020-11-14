@@ -1,4 +1,4 @@
-package org.structures.list.linked.doublee;
+package org.structures.list.linked.doublelist;
 
 public class DoubleLinkedNode<T> {
     

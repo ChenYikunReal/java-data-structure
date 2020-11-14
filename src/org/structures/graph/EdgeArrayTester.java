@@ -17,8 +17,7 @@ public class EdgeArrayTester {
                 node4, node5, node6, node7, node8};
         String[] vertices = {"v0", "v1", "v2", "v3", "v4", "v5"};
         int edge_num = 9;
-        int vertices_num = 6;
-        array.vertices_num = vertices_num;
+        array.vertices_num = 6;
         array.edge_num = edge_num;
         array.vertices = vertices;
         array.edgeArray = nodeList;

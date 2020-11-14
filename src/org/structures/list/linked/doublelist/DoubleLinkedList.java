@@ -1,11 +1,11 @@
-package org.structures.list.linked.doublee;
+package org.structures.list.linked.doublelist;
 
 import org.structures.list.ListException;
 import org.structures.list.ListInterface;
 
 public class DoubleLinkedList<T> implements ListInterface<T> {
     
-    private DoubleLinkedNode<T> first;
+    private final DoubleLinkedNode<T> first;
     
     public DoubleLinkedList() {
         first = new DoubleLinkedNode<T>();
@@ -14,8 +14,8 @@ public class DoubleLinkedList<T> implements ListInterface<T> {
     public DoubleLinkedList(T[] init) {
         first = new DoubleLinkedNode<T>();
         DoubleLinkedNode<T> rear = first;
-        for (int i = 0; i < init.length; i++) {
-            DoubleLinkedNode<T> node = new DoubleLinkedNode<>(init[i]);
+        for (T t : init) {
+            DoubleLinkedNode<T> node = new DoubleLinkedNode<>(t);
             rear.setNext(node);
             node.setPrior(rear);
             rear = node;
@@ -118,10 +118,7 @@ public class DoubleLinkedList<T> implements ListInterface<T> {
 
     @Override
     public boolean isEmpty() {
-        if (first.getNext() == null) {
-            return true;
-        }
-        return false;
+        return first.getNext() == null;
     }
 
 }

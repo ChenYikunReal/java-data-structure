@@ -10,7 +10,7 @@ public class Tangram {
     private int[][] edge = new int[BOARD_NUMBER][BOARD_NUMBER];
 
     //初始化所有顶点均涂色0
-    private int[] color = new int[BOARD_NUMBER];
+    private final int[] color = new int[BOARD_NUMBER];
     
     public Tangram(char[] board, int[][] edge) {
         this.board = board;

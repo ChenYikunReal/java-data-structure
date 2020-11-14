@@ -16,9 +16,9 @@ public class PolynomialList {
         first = new PolyNode();
         //初始化尾引用，实现未插入
         PolyNode rear = first;
-        for (int i = 0; i < initialList.length; i++) {
+        for (String s : initialList) {
             //以逗号分离系数、指数
-            String[] polyInfo = initialList[i].split(",");
+            String[] polyInfo = s.split(",");
             int coef = Integer.parseInt(polyInfo[0]);
             int exp = Integer.parseInt(polyInfo[1]);
             //生成多项式结点
@@ -33,7 +33,7 @@ public class PolynomialList {
         StringBuilder str = new StringBuilder();
         while (node != null) {
             if (node.getCoef() != 0) {
-                str.append(node.getCoef() + "x^" + node.getExp());
+                str.append(node.getCoef()).append("x^").append(node.getExp());
                 //System.out.print();
                 if (node.getNext() != null) {
                     str.append(" + ");

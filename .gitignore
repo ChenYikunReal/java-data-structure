@@ -1,7 +1,5 @@
-.DS_Store
-out/
-
 .idea
 .vscode
-
+.DS_Store
+out/
 *.iml

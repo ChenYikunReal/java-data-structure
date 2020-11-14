@@ -1,6 +1,0 @@
-Person实体类、Integer自带包装类
-ISequentialList是定义的接口
-SequentialList是实现类
-接口给出了必要的注释，解释了方法功能
-Tester里面也有必要的解释
-ListException自定义异常类

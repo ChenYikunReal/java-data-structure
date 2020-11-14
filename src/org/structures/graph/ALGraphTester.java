@@ -1,6 +1,6 @@
 package org.structures.graph;
 
-public class ALGraphtTester {
+public class ALGraphTester {
     
     public static void main(String[] args) {
         String[] init_vertices = {"A", "B", "C", "D"};

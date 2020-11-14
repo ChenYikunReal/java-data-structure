@@ -97,7 +97,7 @@ public class BinaryTree<T> implements IBinaryTree<T> {
             } else {
                 int leftResult = getHeight(height+1, left);
                 int rightResult = getHeight(height+1, right);
-                return leftResult >= rightResult ? leftResult : rightResult;
+                return Math.max(leftResult, rightResult);
             }
         }
     }
@@ -331,10 +331,7 @@ public class BinaryTree<T> implements IBinaryTree<T> {
 
     @Override
     public boolean contains(T key) {
-        if (search(key) == null) {
-            return false;
-        }
-        return true;
+        return search(key) != null;
     }
 
     @Override
@@ -347,8 +344,8 @@ public class BinaryTree<T> implements IBinaryTree<T> {
     }
     
     private class SearchNode {
-        private int level;
-        private BinaryTreeNode<T> node;
+        private final int level;
+        private final BinaryTreeNode<T> node;
         public SearchNode(int level, BinaryTreeNode<T> node) {
             super();
             this.level = level;
@@ -371,7 +368,7 @@ public class BinaryTree<T> implements IBinaryTree<T> {
         if (key.equals(root.getData())) {
             return rootNode;
         }
-        while(rootNode != null && rootNode.getNode() != null) {
+        while(rootNode.getNode() != null) {
             BinaryTreeNode<T> treeNode = rootNode.getNode();
             int level = rootNode.getLevel();
             BinaryTreeNode<T> left = treeNode.getLeft();
@@ -451,8 +448,7 @@ public class BinaryTree<T> implements IBinaryTree<T> {
             if (left != null) {
                 return left;
             }
-            List<BinaryTreeNode<T>> right = minSizeBetweenTwoNodesPre(node.getRight(), tempPath, find);
-            return right;
+            return minSizeBetweenTwoNodesPre(node.getRight(), tempPath, find);
         } else {
             return null;
         }

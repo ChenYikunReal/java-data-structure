@@ -85,7 +85,7 @@ public class AvlTree<T extends Comparable<? super T>> implements IAvlTree<T> {
             } else {
                 int leftResult = getHeight(height+1, left);
                 int rightResult = getHeight(height+1, right);
-                return leftResult >= rightResult ? leftResult : rightResult;
+                return Math.max(leftResult, rightResult);
             }
         }
     }
@@ -338,9 +338,9 @@ public class AvlTree<T extends Comparable<? super T>> implements IAvlTree<T> {
     
     private class SearchNode {
         
-        private int level;
+        private final int level;
         
-        private AvlNode<T> node;
+        private final AvlNode<T> node;
         
         public SearchNode(int level, AvlNode<T> node) {
             super();
@@ -367,7 +367,7 @@ public class AvlTree<T extends Comparable<? super T>> implements IAvlTree<T> {
         if (key.equals(root.element)) {
             return rootNode;
         }
-        while(rootNode != null && rootNode.getNode() != null) {
+        while(rootNode.getNode() != null) {
             AvlNode<T> treeNode = rootNode.getNode();
             int level = rootNode.getLevel();
             AvlNode<T> left = treeNode.left;
@@ -415,9 +415,6 @@ public class AvlTree<T extends Comparable<? super T>> implements IAvlTree<T> {
             node.left = insert(data, node.left);
         } else if (compareResult > 0) {
             node.right = insert(data, node.right);
-        } else {
-            //Duplicate; do nothing.
-            ;
         }
         return balance(node);
     }

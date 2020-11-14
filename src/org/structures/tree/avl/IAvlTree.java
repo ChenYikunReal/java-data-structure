@@ -49,7 +49,7 @@ public interface IAvlTree<T extends Comparable<? super T>> {
     
     /**
      * 插入x作为p的左右孩子
-     * @param p
+     * @param parent
      * @param x
      * @param leftChild
      * @return

@@ -1,12 +1,13 @@
-package org.structures.list.linked.doublee;
+package org.structures.list.linked.circular.doublecircular;
 
 import org.structures.list.ListInterface;
+import org.structures.list.linked.circular.CircularLinkedList;
 
 public class ListTester {
     
     public static void main(String[] args) {
         String[] initialList = {"a", "b", "c", "d", "e", "f"};
-        ListInterface<String> list = new DoubleLinkedList<>(initialList);
+        ListInterface<String> list = new CircularLinkedList<>(initialList);
         System.out.println("线性表长度" + list.length());
         System.out.println("当前线性表遍历结果：");
         list.printList();
