@@ -35,14 +35,27 @@ public class CircularLinkedList<T> implements ListInterface<T> {
 
     @Override
     public int length() {
-        // TODO Auto-generated method stub
-        return 0;
+        CircularLinkedNode<T> temp = first;
+        int counter = 0;
+        while (!temp.getNext().equals(first)) {
+            counter++;
+            temp = temp.getNext();
+        }
+        return counter;
     }
 
     @Override
     public int locate(T element) {
-        // TODO Auto-generated method stub
-        return 0;
+        CircularLinkedNode<T> temp = first;
+        int counter = 0;
+        while (!temp.getNext().equals(first)) {
+            counter++;
+            temp = temp.getNext();
+            if (temp.getData().equals(element)) {
+                break;
+            }
+        }
+        return counter;
     }
 
     @Override
@@ -54,7 +67,6 @@ public class CircularLinkedList<T> implements ListInterface<T> {
     @Override
     public void insert(int i, T element) throws ListException {
         // TODO Auto-generated method stub
-        
     }
 
     @Override
