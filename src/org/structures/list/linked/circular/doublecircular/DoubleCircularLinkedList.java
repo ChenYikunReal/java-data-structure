@@ -107,6 +107,7 @@ public class DoubleCircularLinkedList<T> implements DoubleCircularLinkedListInte
         T deleteElement = temp.getNext().getData();
         temp.setNext(temp.getNext().getNext());
         temp.getNext().setPrev(temp);
+        length--;
         return deleteElement;
     }
 

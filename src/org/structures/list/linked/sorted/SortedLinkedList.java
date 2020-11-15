@@ -1,29 +1,25 @@
-package org.structures.list.linked;
+package org.structures.list.linked.sorted;
 
 import org.structures.list.ListException;
-import org.structures.list.ListInterface;
+import org.structures.list.linked.LinkedNode;
 
-public class LinkedList<T> implements ListInterface<T> {
-    
+import java.util.Arrays;
+
+public class SortedLinkedList<T extends Comparable<? super T>> implements SortedLinkedListInterface<T> {
+
+    private int length;
+
     private final LinkedNode<T> first;
-    
-    public LinkedList() {
-        first = new LinkedNode<T>();
+
+    public SortedLinkedList() {
+        this.first = new LinkedNode<T>();
+        this.length = 0;
     }
-    
-    //头插法
-//    public LinkedList(T[] init) {
-//        first = new LinkedNode<T>();
-//        for (int i = 0; i < init.length; i++) {
-//            LinkedNode<T> node = new LinkedNode<>(init[i]);
-//            node.setNext(first.getNext());
-//            first.setNext(node);
-//        }
-//    }
-    
-    //尾插法
-    public LinkedList(T[] init) {
-        first = new LinkedNode<T>();
+
+    public SortedLinkedList(T[] init) {
+        this.length = init.length;
+        this.first = new LinkedNode<T>();
+        Arrays.sort(init);
         LinkedNode<T> rear = first;
         for (T t : init) {
             LinkedNode<T> node = new LinkedNode<>(t);
@@ -43,12 +39,6 @@ public class LinkedList<T> implements ListInterface<T> {
 
     @Override
     public int length() {
-        int length = 0;
-        LinkedNode<T> p = first.getNext();
-        while(p != null) {
-            p = p.getNext();
-            length++;
-        }
         return length;
     }
 
@@ -91,19 +81,22 @@ public class LinkedList<T> implements ListInterface<T> {
     }
 
     @Override
-    public void insert(int i, T element) throws ListException {
-        LinkedNode<T> p = first;
-        int count = 1;
-        while (p != null && count < i) {
+    public void insert(T element) throws ListException {
+        LinkedNode<T> p = first.getNext(), newNode = new LinkedNode<>(element);
+        boolean flag = false;
+        while (p.getNext() != null) {
+            if (p.getData().compareTo(element) < 0 && p.getNext().getData().compareTo(element) >= 0) {
+                newNode.setNext(p.getNext());
+                p.setNext(newNode);
+                flag = true;
+                break;
+            }
             p = p.getNext();
-            count++;
         }
-        if (p == null) {
-            throw new ListException("插入位置异常");
+        length++;
+        if (!flag) {
+            p.setNext(newNode);
         }
-        LinkedNode<T> node = new LinkedNode<>(element);
-        node.setNext(p.getNext());
-        p.setNext(node);
     }
 
     @Override
@@ -120,12 +113,13 @@ public class LinkedList<T> implements ListInterface<T> {
         LinkedNode<T> q = p.getNext();
         T deleteNode = q.getData();
         p.setNext(q.getNext());
+        length--;
         return deleteNode;
     }
 
     @Override
     public boolean isEmpty() {
-        return first.getNext() == null;
+        return length == 0;
     }
 
 }

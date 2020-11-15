@@ -3,7 +3,7 @@ package org.structures.list.linked.circular.doublecircular;
 import org.structures.list.ListInterface;
 import org.structures.list.linked.circular.doublecircular.DoubleCircularLinkedList;
 
-public class ListTester {
+public class DoubleCircularLinkedListTester {
     
     public static void main(String[] args) {
         String[] initialList = {"a", "b", "c", "d", "e", "f"};

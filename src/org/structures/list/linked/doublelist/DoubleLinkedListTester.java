@@ -2,7 +2,7 @@ package org.structures.list.linked.doublelist;
 
 import org.structures.list.ListInterface;
 
-public class ListTester {
+public class DoubleLinkedListTester {
     
     public static void main(String[] args) {
         String[] initialList = {"a", "b", "c", "d", "e", "f"};
