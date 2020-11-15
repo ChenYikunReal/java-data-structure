@@ -9,7 +9,7 @@ import org.structures.list.ListInterface;
  */
 public class CircularLinkedList<T> implements ListInterface<T> {
     
-    private CircularLinkedNode<T> first;
+    private final CircularLinkedNode<T> first;
     
     public CircularLinkedList() {
         first = new CircularLinkedNode<>();
@@ -51,37 +51,63 @@ public class CircularLinkedList<T> implements ListInterface<T> {
     public int locate(T element) {
         CircularLinkedNode<T> temp = first;
         int counter = 0;
+        boolean flag = false;
         while (!temp.getNext().equals(first)) {
             counter++;
             temp = temp.getNext();
             if (temp.getData().equals(element)) {
+                flag = true;
                 break;
             }
         }
-        return counter;
+        return flag ? counter : -1;
     }
 
     @Override
     public T getElement(int i) throws ListException {
-        // TODO Auto-generated method stub
-        return null;
+        int length = length();
+        if (i > length) {
+            throw new IndexOutOfBoundsException("链表越界");
+        }
+        CircularLinkedNode<T> temp = first;
+        for (int j = 0; j < i; j++) {
+            temp = temp.getNext();
+        }
+        return temp.getData();
     }
 
     @Override
     public void insert(int i, T element) throws ListException {
-        // TODO Auto-generated method stub
+        int length = length();
+        if (i > length) {
+            throw new IndexOutOfBoundsException("链表越界");
+        }
+        CircularLinkedNode<T> temp = first, newNode = new CircularLinkedNode<>(element);
+        for (int j = 0; j < i-1; j++) {
+            temp = temp.getNext();
+        }
+        newNode.setNext(temp.getNext());
+        temp.setNext(newNode);
     }
 
     @Override
     public T delete(int i) throws ListException {
-        // TODO Auto-generated method stub
-        return null;
+        int length = length();
+        if (i > length) {
+            throw new IndexOutOfBoundsException("链表越界");
+        }
+        CircularLinkedNode<T> temp = first;
+        for (int j = 0; j < i-1; j++) {
+            temp = temp.getNext();
+        }
+        T deleteElement = temp.getNext().getData();
+        temp.setNext(temp.getNext().getNext());
+        return deleteElement;
     }
 
     @Override
     public boolean isEmpty() {
-        // TODO Auto-generated method stub
-        return false;
+        return first.getNext().equals(first);
     }
 
 }
