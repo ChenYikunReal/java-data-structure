@@ -2,8 +2,6 @@ package org.structures.tree.node;
 
 /**
  * 与孩子结点同时存在的头结点
- * @author yk
- *
  * @param <T>
  */
 public class TreeNode<T> {

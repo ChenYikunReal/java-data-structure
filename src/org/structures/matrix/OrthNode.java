@@ -1,4 +1,4 @@
-package org.structures.sparse_matrix;
+package org.structures.matrix;
 
 /**
  * 矩阵的十字链表存储

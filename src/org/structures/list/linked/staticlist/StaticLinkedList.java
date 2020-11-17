@@ -3,6 +3,7 @@ package org.structures.list.linked.staticlist;
 import org.structures.list.ListException;
 import org.structures.list.ListInterface;
 
+// TODO 没写完呜呜呜呜 先鸽着
 public class StaticLinkedList<T> implements ListInterface<T> {
 
     private final int size;

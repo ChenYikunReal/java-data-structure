@@ -1,4 +1,4 @@
-package org.structures.sparse_matrix;
+package org.structures.matrix;
 
 public class Element {
     

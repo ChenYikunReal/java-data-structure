@@ -1,4 +1,4 @@
-package org.structures.sparse_matrix;
+package org.structures.matrix;
 
 /**
  * 三元组顺序表实现稀疏矩阵存储

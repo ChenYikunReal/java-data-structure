@@ -30,6 +30,7 @@ public class LinearSearch {
     /**
      * 二分查找非递归实现
      * 待查集合储存在r[0]~r[length-1]
+     * 应用二分查找的集合必须是有序的
      * @param k
      * @return
      */
